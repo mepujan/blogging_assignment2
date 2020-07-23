@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="blog-title">
+                <h2 style="text-align: center"><u>Blog Title</u></h2>
+                <div class="card" style="width: 100%;">
+                    {% for blog in blogs %}
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#" style="text-decoration: none">{{ blog.title }}</a></h5>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="blog-post">
+                <h2 style="text-align: center"><u>Recent Blogs</u></h2>
+                <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: green">{{ blog.title }}</h5>
+                            <hr>
+                            <p class="card-text">{{ blog.blog | safe }}</p>
+                            <hr/>
+                            <div class="foot">
+                                <p>Author: {{ blog.user.username }}<span class="tab"></span> Created
+                                    At: {{ blog.created_date }}<span class="tab"></span> Updated
+                                    At: {{ blog.updated_date }} <span class="tab"></span>
+                                    {% if request.user == blog.user %}
+                                    <a  style="text-decoration: none;" href="{% url 'blog:update' blog.slug %}">Edit</a> <span class="tab"></span>
+                                    <a  style="text-decoration: none;" href="{% url 'blog:delete' blog.id %}">Delete</a> </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

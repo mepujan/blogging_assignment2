@@ -1,0 +1,107 @@
+.login {
+    margin-top: 50px;
+    padding-top: 30px;
+    height: 20vh;
+    background-color: grey;
+    text-align: center;
+
+}
+
+.signup {
+    margin-top: 50px;
+    padding-top: 30px;
+    height: 20vh;
+    background-color: grey;
+    text-align: center;
+
+}
+
+.navbar {
+    margin-top: 5vh;
+}
+
+.heading {
+    height: 10vh;
+    margin-top: 5vh;
+    padding-left: 20px;
+}
+
+.footer {
+    margin-top: 70vh;
+    text-align: center;
+}
+
+.blog-title, .blog-post {
+    border: 2px solid blue;
+    padding-left: 15px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+hr {
+    color: red;
+    width: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.foot {
+    background-color: skyblue;
+}
+
+.tab {
+    padding-left: 40px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 70px;
+    height: 50px;
+    border-radius: 50%;
+
+}
+.avatar-img{
+    margin-top: 40px;
+    padding-left: 80%;
+}
+.ProfileAvatar{
+    width: 150px;
+    height: 130px;
+    border-radius: 50%;
+
+}
+.profile{
+    display: block;
+    text-align: center;
+
+}
+.userManage a{
+    text-decoration: none;
+    color: white;
+}
+.userManage{
+    padding-top: 20px;
+
+}
+button{
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+.userManage .delete{
+    background-color: red;
+    text-align: center;
+
+}
+.userManage .delete:hover{
+    background-color: blue;
+}
+
+.userManage .update a{
+    color: black;
+}
+.userManage .update:hover{
+    background-color: green;
+}

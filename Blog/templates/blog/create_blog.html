@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" >
+            <div class="login">
+                <h1>Create New Blog</h1>
+            </div>
+            <hr>
+            <form method="post" action="{% url 'blog:create_blog' %}">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <br>
+                <input type="submit" value="Create Blog" class="btn btn-success"/>
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}

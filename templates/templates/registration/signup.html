@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+  {% if form.errors %}
+        <p>Username already exist</p>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="signup">
+                <h1>Create Account</h1>
+            </div>
+
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <br>
+                <input type="submit" value="Create Account" class="btn btn-success"/>
+                <span>Already Have Account? </span><a href="{% url 'blog:login' %}">Login</a>
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+        {% else %}
+            <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" >
+            <div class="login">
+                <h1>Login</h1>
+            </div>
+
+            <hr>
+            <form method="post" action="{% url 'blog:login' %}">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <br>
+                <input type="submit" value="Login" class="btn btn-success"/>
+                <span>Doesn't Have Account? </span><a href="{% url 'blog:signup' %}">Create Account</a>
+                <input type="hidden" name="next" value="{{ next }}"/>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}
